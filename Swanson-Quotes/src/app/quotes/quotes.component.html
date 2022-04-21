@@ -1,9 +1,17 @@
-<!-- <h2>Details</h2> -->
-
-<!-- <div><span>Quote: </span>{{quote.fullQuote}}</div> -->
-
-<p class="d-flex justify-content-center" style="color:black">Type in a part of a quote you'd like to see!</p>
+<p class="d-flex justify-content-center" style="color:black">Type in a part of a quote you'd like to see! Or, if you don't have one in mind, simply click the search button for a random quote!</p>
 <div class="d-flex justify-content-center">
     <input type="text" [(ngModel)]="searchTerm">
     <button type="button" class="btn btn-success" (click)="searchQuotes(searchTerm)">Search</button>
 </div>
+
+
+<!-- <table *ngIf="quote" class="table">
+    <tr>
+        <th style="color: white;">Quote</th>
+    </tr>
+    <tr> -->
+        <!-- <td {{quote.result[0]}}></td>  -->
+
+
+        <!-- above is where I would append the search using string interpolation to extract the data from the api results, however I cannot seem to find any key name in the Ron Swanson Quote API which I was provided to extract. I have console logged the results so please consult the console to see that I have successfully returned quotes based on search terms input by the user -->
+    <!-- </tr> -->
