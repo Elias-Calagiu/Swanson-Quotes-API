@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Quote } from '../quote';
 import { QUOTES } from '../sample-quotes';
+import { QuoteService } from '../quote.service';
+// import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-quotes',
@@ -9,16 +11,25 @@ import { QUOTES } from '../sample-quotes';
 })
 export class QuotesComponent implements OnInit {
 
-  quote = QUOTES;
+  quotes: Quote[] = [];
   searchTerm: string = '';
 
-  constructor() { }
+  constructor(private quoteService: QuoteService) { }
 
   ngOnInit(): void {
+    this.getQuotes();
+  }
+
+  getQuotes(): void {
+    this.quoteService.getQuotes()
+    .subscribe(quotes => this.quotes = quotes);
   }
 
   searchQuotes(search:string){
     this.searchTerm = search;
+
+    // this.http.get()
+
   }
 
 }
