@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Quote } from '../quote';
+import { QUOTES } from '../sample-quotes';
+
 @Component({
   selector: 'app-quotes',
   templateUrl: './quotes.component.html',
@@ -7,13 +9,16 @@ import { Quote } from '../quote';
 })
 export class QuotesComponent implements OnInit {
 
-quote: Quote = {
-  id: 1,
-  fullQuote: 'Hello'
-}
+  quote = QUOTES;
+  searchTerm: string = '';
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  searchQuotes(search:string){
+    this.searchTerm = search;
   }
 
 }

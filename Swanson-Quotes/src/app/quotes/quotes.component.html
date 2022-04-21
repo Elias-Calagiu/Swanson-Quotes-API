@@ -1,3 +1,9 @@
-<h2>Details</h2>
-<!-- <div><span>id: </span>{{hero.id}}</div> -->
-<div><span>Quote: </span>{{quote.fullQuote}}</div>
+<!-- <h2>Details</h2> -->
+
+<!-- <div><span>Quote: </span>{{quote.fullQuote}}</div> -->
+
+<p class="d-flex justify-content-center" style="color:black">Type in a part of a quote you'd like to see!</p>
+<div class="d-flex justify-content-center">
+    <input type="text" [(ngModel)]="searchTerm">
+    <button type="button" class="btn btn-success" (click)="searchQuotes(searchTerm)">Search</button>
+</div>
